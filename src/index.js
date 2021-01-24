@@ -1,14 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "../src/components/App/App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { NeedProvider } from "../src/components/Contexts/NeedContext";
+import { NeedListProvider } from "../src/components/Contexts/NeedListContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <NeedListProvider>
+      <NeedProvider>
+        <App />
+      </NeedProvider>
+    </NeedListProvider>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

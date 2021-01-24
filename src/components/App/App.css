@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: left;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+main {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.header {
+  margin: 0;
+  padding: 0 10px;
+  color: #fff;
+  background-color: #444;
+}
+
+.brand-logo {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: inline-block;
+}
+.nav-links > li {
+  color: #fff;
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-links > li > a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.need-have {
+  margin: 20px auto 0;
+  padding: 100px 20px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  background-color: #444;
+}
+
+footer {
+  padding: 0 10px;
+  text-align: center;
+}
+
+li {
+  padding: 0 10px;
+}
