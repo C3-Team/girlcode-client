@@ -1,28 +1,84 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import HaveList from "./HaveList";
 
-const HavePage = () => {
-  return (
-    <div>
-      <h3>Posted Today</h3>
-      <select name="category" id="category">
-        <option value="zipcode">zipcode</option>
-        <option value="newest">newest</option>
-        <option value="oldest">oldest</option>
-      </select>
+export default class Needpage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      haves: [],
+      have: {
+        name: "",
+        email: "",
+        tampons: "",
+        pads: "",
+        zipcode: "",
+      },
+    };
+  }
 
-      <p>
-        2 hrs ago: Samantha needs 10 tampons at 75080 .
-        <a href="./contact-form.html">contact</a>
-      </p>
+  handleClick = () => {
+    document.getElementById("showForm").style.display = "block";
+    document.getElementById("requestBtn").style.display = "none";
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const have = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      tampons: e.target.tampons.value,
+      pads: e.target.pads.value,
+      zipcode: e.target.zipcode.value,
+    };
 
-      <p>
-        5 hrs ago: Bailey needs 15 pads at 78758.
-        <a href="./contact-form.html">contact</a>
-      </p>
-      <Link to="/haveform">New Inventory</Link>
-    </div>
-  );
-};
+    this.setState({
+      haves: [...this.state.haves, have],
+    });
+  };
 
-export default HavePage;
+  render() {
+    console.log("haves are ", this.state.haves);
+    return (
+      <div>
+        <div id="showForm">
+          <h1>What do you have?</h1>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="need">
+              <b>name</b>
+              <input type="text" placeholder="Jane Doe" name="name" required />
+              <b>email</b>
+              <input
+                type="email"
+                name="email"
+                placeholder={"name@gmail.com"}
+                required
+              />
+              <b>tampons</b>
+              <input
+                type="number"
+                name="tampons"
+                placeholder="number of tampons"
+              />
+            </label>
+            <br />
+            <label htmlFor="pads">
+              <b>pads</b>
+              <input type="number" name="pads" placeholder="number of pads" />
+            </label>
+            <br />
+            <label htmlFor="zip">
+              <b>zip code</b>
+              <input name="zipcode" type="number" placeholder='e.g., "78758"' />
+            </label>
+            <button type="submit">submit</button>
+          </form>
+        </div>
+        <button onClick={() => this.handleClick()} id="requestBtn">
+          New Inventory
+        </button>
+        <HaveList haves={this.state.haves} />
+        <ul id="need-list"></ul>
+      </div>
+    );
+  }
+}

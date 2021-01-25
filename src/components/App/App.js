@@ -3,8 +3,8 @@ import MainPage from "../MainPage/MainPage";
 import { Route } from "react-router-dom";
 import NeedPage from "../Need/NeedPage";
 import HavePage from "../Have/HavePage";
-import NeedForm from "../Need/NeedForm";
-import HaveForm from "../Have/HaveForm";
+import NeedList from "../Need/NeedList";
+import HaveList from "../Have/HaveList";
 import Header from "../Header/Header";
 import "./App.css";
 import Contact from "../Contact/Contact";
@@ -26,8 +26,8 @@ class App extends Component {
         <Route exact path="/" component={MainPage} />
         <Route path="/needpage" component={NeedPage} />
         <Route path="/havepage" component={HavePage} />
-        <Route path="/needform" component={NeedForm} />
-        <Route path="/haveform" component={HaveForm} />
+        <Route path="/needform" component={NeedList} />
+        <Route path="/haveform" component={HaveList} />
         <Route path="/contactform" component={Contact} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />

@@ -61,3 +61,7 @@ footer {
 li {
   padding: 0 10px;
 }
+
+#showForm {
+  display: none;
+}
