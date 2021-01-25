@@ -42,9 +42,9 @@ export class NeedListProvider extends Component {
       setNeedList: this.state.setNeedList,
     };
     return (
-      <NeedListContext.provider value={value}>
+      <NeedListContext.Provider value={value}>
         {this.props.children}
-      </NeedListContext.provider>
+      </NeedListContext.Provider>
     );
   }
 }

@@ -59,9 +59,9 @@ export class NeedProvider extends Component {
       clearNeed: this.state.clearNeed,
     };
     return (
-      <NeedContext.provider value={value}>
+      <NeedContext.Provider value={value}>
         {this.props.children}
-      </NeedContext.provider>
+      </NeedContext.Provider>
     );
   }
 }

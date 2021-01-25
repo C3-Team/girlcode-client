@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import NeedContextProvider from "../Contexts/NeedContext";
+import NeedContext from "../Contexts/NeedContext";
 class NeedForm extends Component {
-  static contextType = NeedContextProvider;
+  static contextType = NeedContext;
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const info = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      tampon: e.target.tampon.value,
-      pad: e.target.pad.value,
-    };
+    // const info = {
+    //   name: e.target.name.value,
+    //   email: e.target.email.value,
+    //   tampon: e.target.tampon.value,
+    //   pad: e.target.pad.value,
+    // };
     // const zipcode =e.target.zipcode.
   };
   render() {
