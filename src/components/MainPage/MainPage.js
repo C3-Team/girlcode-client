@@ -11,10 +11,10 @@ const MainPage = () => {
           urgency. Ask, and you shall receive!
         </h3>
         <Link className="need-have" to="/needpage">
-          Need
+          Needs
         </Link>
         <Link className="need-have" to="/havepage">
-          Have
+          Inventory
         </Link>
       </main>
       <br />

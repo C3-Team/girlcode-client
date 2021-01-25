@@ -34,7 +34,14 @@ export default class Needpage extends Component {
     this.setState({
       needs: [...this.state.needs, need],
     });
+
+    document.getElementById("requestBtn").style.display = "block";
+    document.getElementById("showForm").style.display = "none";
   };
+
+  //  componentDidMount(){
+  //    fetch()
+  //  }
 
   render() {
     console.log("needs are ", this.state.needs);
@@ -70,7 +77,7 @@ export default class Needpage extends Component {
               <b>zip code</b>
               <input name="zipcode" type="number" placeholder='e.g., "78758"' />
             </label>
-            <button type="submit">submit</button>
+            <button id="submitBtn">submit</button>
           </form>
         </div>
         <button onClick={() => this.handleClick()} id="requestBtn">
