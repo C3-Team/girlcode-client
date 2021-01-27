@@ -10,16 +10,22 @@ import "./App.css";
 import Contact from "../Contact/Contact";
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";
+import config from "../../config";
+import { NeedsContext } from "../Context";
 
 class App extends Component {
-  state = {
-    hasError: false,
-  };
-  static getDerivedStateFromError(error) {
-    console.error(error);
-    return { hasError: true };
-  }
-  render() {
+  static contextType = NeedsContext;
+  // componentDidMount() {
+  //   let options = {
+  //     headers: {
+  //       Authorization: `Bearer ${config.API_KEY}`,
+  //     },
+  //   };
+  //   fetch(`${config.API_ENDPOINT}/needs`, options)
+  //     .then((res) => res.json())
+  //     .then((need) => console.log(need));
+  // }
+  mainRoutes = () => {
     return (
       <>
         <Header />
@@ -33,6 +39,9 @@ class App extends Component {
         <Route path="/signup" component={Signup} />
       </>
     );
+  };
+  render() {
+    return <>{this.mainRoutes()}</>;
   }
 }
 

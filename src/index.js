@@ -4,17 +4,13 @@ import "./index.css";
 import App from "../src/components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { NeedProvider } from "../src/components/Contexts/NeedContext";
-import { NeedListProvider } from "../src/components/Contexts/NeedListContext";
-
+import { NeedsProvider } from "./components/Context";
 ReactDOM.render(
-  <BrowserRouter>
-    <NeedListProvider>
-      <NeedProvider>
-        <App />
-      </NeedProvider>
-    </NeedListProvider>
-  </BrowserRouter>,
+  <NeedsProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </NeedsProvider>,
   document.getElementById("root")
 );
 reportWebVitals();

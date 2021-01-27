@@ -1,26 +1,15 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NeedsContext } from "../Context";
 import NeedList from "./NeedList";
 
 export default class Needpage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      needs: [],
-      need: {
-        name: "",
-        email: "",
-        tampons: "",
-        pads: "",
-        zipcode: "",
-      },
-    };
-  }
+  static contextType = NeedsContext;
 
   handleClick = () => {
     document.getElementById("showForm").style.display = "block";
     document.getElementById("requestBtn").style.display = "none";
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     const need = {
@@ -31,20 +20,14 @@ export default class Needpage extends Component {
       zipcode: e.target.zipcode.value,
     };
 
-    this.setState({
-      needs: [...this.state.needs, need],
-    });
-
+    this.context.handleAddNeed(need);
+    //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";
   };
 
-  //  componentDidMount(){
-  //    fetch()
-  //  }
-
   render() {
-    console.log("needs are ", this.state.needs);
+    console.log("needs are ", this.context.needs);
     return (
       <div>
         <div id="showForm">
@@ -83,7 +66,7 @@ export default class Needpage extends Component {
         <button onClick={() => this.handleClick()} id="requestBtn">
           New Request
         </button>
-        <NeedList needs={this.state.needs} />
+        <NeedList />
         <ul id="need-list"></ul>
       </div>
     );
