@@ -9,10 +9,11 @@ export default class NeedList extends Component {
         {this.context.needs.map((need) => (
           <li key={need.id}>
             {need.user_name} needs {need.tampons} tampons and {need.pads} pads
-            at {need.zipcode}.<button>Delete</button>
-            <button onClick={this.context.handleDeleteNeed(need.id)}>
-              Edit
+            at {need.zipcode}.
+            <button onClick={() => this.context.handleDeleteNeed(need.id)}>
+              Delete
             </button>
+            <button>Edit</button>
           </li>
         ))}
       </div>

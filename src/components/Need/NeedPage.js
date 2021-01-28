@@ -30,8 +30,13 @@ export default class Needpage extends Component {
       },
     };
     fetch(`${config.API_ENDPOINT}/needs`, postOptions).then((res) =>
-      res.json().then((data) => console.log(need))
+      res.json().then((need) => this.context.AddNeedNote(need))
     );
+
+    //delete
+    fetch(`${config.API_ENDPOINT}/needs/${need.id}`, {
+      method: "DELETE",
+    }).then(() => this.context.handleDeleteNeed(need.id));
     //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";
