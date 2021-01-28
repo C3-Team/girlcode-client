@@ -39,18 +39,18 @@ export class NeedsProvider extends Component {
       .then((needs) => this.setState({ needs }));
   }
 
-  handleAddNeed(need) {
+  handleAddNeed = (need) => {
     console.log("here here here");
     this.setState({
       needs: [...this.state.needs, need],
     });
-  }
-  handleDeleteNeed(needId) {
+  };
+  handleDeleteNeed = (needId) => {
     console.log("delete");
     this.setState({
       needs: this.state.needs.filter((need) => need.id !== needId),
     });
-  }
+  };
 
   clearForm = () => {
     this.setState({
@@ -68,6 +68,8 @@ export class NeedsProvider extends Component {
     let value = {
       needs: this.state.needs,
       need: this.state.need,
+      handleAddNeed: this.handleAddNeed,
+      handleDeleteNeed: this.handleDeleteNeed,
     };
     return (
       <NeedsContext.Provider value={value}>

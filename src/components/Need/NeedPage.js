@@ -30,7 +30,7 @@ export default class Needpage extends Component {
       },
     };
     fetch(`${config.API_ENDPOINT}/needs`, postOptions).then((res) =>
-      res.json()
+      res.json().then((data) => console.log(need))
     );
     //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
