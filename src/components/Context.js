@@ -50,17 +50,20 @@ export class NeedsProvider extends Component {
     this.setState({
       needs: this.state.needs.filter((need) => need.id !== needId),
     });
-    console.log(`${needId}`);
+    // console.log(`${needId}`);
+    //delete api
     const options = {
-      method: "Delete",
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${config.API_KEY}`,
       },
     };
-    fetch(`${config.API_ENDPOINT}/needs/${needId}`, options).then(() =>
-      this.context.handleDeleteNeed()
-    );
+    fetch(`${config.API_ENDPOINT}/needs/${needId}`, options).then((res) => {
+      if (!res.ok) {
+        throw new Error(res.error);
+      }
+    });
   };
 
   clearForm = () => {

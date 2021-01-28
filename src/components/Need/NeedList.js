@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { NeedsContext } from "../Context";
-import config from "../../config";
 export default class NeedList extends Component {
   static contextType = NeedsContext;
 
@@ -15,7 +14,6 @@ export default class NeedList extends Component {
               {console.log(need.id)}
               Delete
             </button>
-            <button>Edit</button>
           </li>
         ))}
       </div>

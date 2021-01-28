@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Signup = () => {
   return (
@@ -49,7 +49,10 @@ const Signup = () => {
 
           <p>
             By creating an account you agree to our
-            <a href="#">Terms & Privacy</a>.
+            <a href="https://app.termsfeed.com/wizard/terms-conditions/">
+              Terms & Privacy
+            </a>
+            .
           </p>
 
           <div className="clearfix">

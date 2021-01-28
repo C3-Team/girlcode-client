@@ -10,7 +10,7 @@ import "./App.css";
 import Contact from "../Contact/Contact";
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";
-import config from "../../config";
+
 import { NeedsContext } from "../Context";
 
 class App extends Component {

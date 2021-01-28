@@ -18,7 +18,7 @@ const MainPage = () => {
         </Link>
       </main>
       <br />
-      <footer role="content-info">&copy; 2020 GirlCode</footer>
+      <footer>&copy; 2020 GirlCode</footer>
     </footer>
   );
 };
