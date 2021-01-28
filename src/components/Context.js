@@ -39,12 +39,12 @@ export class NeedsProvider extends Component {
       .then((needs) => this.setState({ needs }));
   }
 
-  handleAddNeed = (need) => {
+  handleAddNeed() {
     console.log("here here here");
-    this.setState({
-      needs: [...this.state.needs, need],
-    });
-  };
+    // this.setState({
+    //   needs: [...this.state.needs, need],
+    // });
+  }
   handleDeleteNeed = (needId) => {
     this.setState({
       needs: this.state.needs.filter((need) => need.id !== needId),
