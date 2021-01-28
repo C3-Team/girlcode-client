@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NeedsContext } from "../Context";
 import NeedList from "./NeedList";
+import config from "../../config";
 
 export default class Needpage extends Component {
   static contextType = NeedsContext;
@@ -13,14 +14,25 @@ export default class Needpage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const need = {
-      name: e.target.name.value,
+      user_name: e.target.name.value,
       email: e.target.email.value,
       tampons: e.target.tampons.value,
       pads: e.target.pads.value,
       zipcode: e.target.zipcode.value,
     };
+    //post
+    const postOptions = {
+      method: "POST",
+      body: JSON.stringify(need),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${config.API_KEY}`,
+      },
+    };
+    fetch(`${config.API_ENDPOINT}/needs`, postOptions).then((res) =>
+      res.json()
+    );
 
-    this.context.handleAddNeed(need);
     //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";

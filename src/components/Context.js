@@ -24,6 +24,7 @@ export class NeedsProvider extends Component {
       pads: "4",
       zipcode: "78758",
     },
+    error: null,
   };
 
   componentDidMount() {
@@ -32,13 +33,14 @@ export class NeedsProvider extends Component {
         Authorization: `Bearer ${config.API_KEY}`,
       },
     };
+    //get
     fetch(`${config.API_ENDPOINT}/needs`, options)
       .then((res) => res.json())
       .then((needs) => this.setState({ needs }));
   }
 
   handleAddNeed = (need) => {
-    // console.log("here here here");
+    console.log("here here here");
     this.setState({
       needs: [...this.state.needs, need],
     });
@@ -46,6 +48,18 @@ export class NeedsProvider extends Component {
   handleDeleteNeed = (needId) => {
     this.setState({
       needs: this.state.needs.filter((need) => need.id !== needId),
+    });
+  };
+
+  clearForm = () => {
+    this.setState({
+      need: {
+        name: "",
+        email: "",
+        tampons: "",
+        pads: "",
+        zipcode: "",
+      },
     });
   };
 
