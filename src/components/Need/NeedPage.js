@@ -34,16 +34,16 @@ export default class Needpage extends Component {
     );
 
     //delete
-    fetch(`${config.API_ENDPOINT}/needs/${need.id}`, {
-      method: "DELETE",
-    }).then(() => this.context.handleDeleteNeed(need.id));
+    // fetch(`${config.API_ENDPOINT}/needs/${need.id}`, {
+    //   method: "DELETE",
+    // }).then(() => this.context.handleDeleteNeed(need.id));
     //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";
   };
 
   render() {
-    console.log("needs are ", this.context.needs);
+    // console.log("needs are ", this.context.needs);
     return (
       <div>
         <div id="showForm">
@@ -82,7 +82,7 @@ export default class Needpage extends Component {
         <button onClick={() => this.handleClick()} id="requestBtn">
           New Request
         </button>
-        <NeedList />
+        <NeedList onDeleteNote={this.context.handleDeleteNeed} />
         <ul id="need-list"></ul>
       </div>
     );
