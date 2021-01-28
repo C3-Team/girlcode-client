@@ -30,7 +30,7 @@ export default class Needpage extends Component {
       },
     };
     fetch(`${config.API_ENDPOINT}/needs`, postOptions).then((res) =>
-      res.json().then((need) => this.context.AddNeedNote(need))
+      res.json().then((need) => this.context.handleAddNeed(need))
     );
 
     //delete
