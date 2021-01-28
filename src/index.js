@@ -4,13 +4,16 @@ import "./index.css";
 import App from "../src/components/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { NeedsProvider } from "./components/Context";
+import { ContextsProvider } from "./components/Context/Context";
+
 ReactDOM.render(
-  <NeedsProvider>
+  // <InventoriesProvider>
+  <ContextsProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </NeedsProvider>,
+  </ContextsProvider>,
+  // </InventoriesProvider>,
   document.getElementById("root")
 );
 reportWebVitals();

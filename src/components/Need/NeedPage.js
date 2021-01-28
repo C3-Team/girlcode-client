@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { NeedsContext } from "../Context";
+import { MyContext } from "../Context/Context";
 import NeedList from "./NeedList";
 import config from "../../config";
 
 export default class Needpage extends Component {
-  static contextType = NeedsContext;
+  static contextType = MyContext;
 
   handleClick = () => {
     document.getElementById("showForm").style.display = "block";
@@ -82,7 +82,7 @@ export default class Needpage extends Component {
         <button onClick={() => this.handleClick()} id="requestBtn">
           New Request
         </button>
-        <NeedList onDeleteNote={this.context.handleDeleteNeed} />
+        <NeedList />
         <ul id="need-list"></ul>
       </div>
     );
