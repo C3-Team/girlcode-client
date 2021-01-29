@@ -8,7 +8,7 @@ export default class NeedList extends Component {
         {this.context.needs.map((need) => (
           <li key={need.id}>
             {need.user_name} needs {need.tampons} tampons and {need.pads} pads
-            at {need.zipcode}.
+            at {need.zipcode}.<a href={`mailto:${need.email}`}>contact</a>
             <button onClick={() => this.context.handleDeleteNeed(need.id)}>
               Delete
             </button>
