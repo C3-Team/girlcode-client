@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-import InventoryList from "./InventoryList";
+import NeedList from "../Need/NeedList";
 import config from "../../config";
 
 export default class Inventorypage extends Component {
@@ -40,44 +40,72 @@ export default class Inventorypage extends Component {
     // console.log("needs are ", this.context.needs);
     return (
       <div>
+        <p>
+          Here is a list of our local needs, before making a new inventory ,
+          check out what your neighbors need.
+        </p>
+        <NeedList />
+        <ul className="list"></ul>
         <div id="showForm">
           <h1>What do you have?</h1>
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="inventory">
-              <b>name</b>
-              <input type="text" placeholder="Jane Doe" name="name" required />
-              <b>email</b>
-              <input
-                type="email"
-                name="email"
-                placeholder={"name@gmail.com"}
-                required
-              />
-              <b>tampons</b>
-              <input
-                type="number"
-                name="tampons"
-                placeholder="number of tampons"
-              />
-            </label>
-            <br />
-            <label htmlFor="pads">
-              <b>pads</b>
-              <input type="number" name="pads" placeholder="number of pads" />
-            </label>
-            <br />
-            <label htmlFor="zip">
-              <b>zip code</b>
-              <input name="zipcode" type="number" placeholder='e.g., "78758"' />
-            </label>
-            <button id="submitBtn">submit</button>
+            <div>
+              <label htmlFor="name">
+                <b>name</b>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Jane Doe"
+                  name="name"
+                  required
+                />
+              </label>
+              <br />
+              <label htmlFor="email">
+                <b>email</b>
+                <br />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={"name@gmail.com"}
+                  required
+                />
+              </label>
+              <br />
+              <label htmlFor="tampons">
+                <b>tampons</b>
+                <br />
+                <input
+                  put
+                  type="number"
+                  name="tampons"
+                  placeholder="number of tampons"
+                />
+              </label>
+              <br />
+              <label htmlFor="pads">
+                <b>pads</b>
+                <br />
+                <input type="number" name="pads" placeholder="number of pads" />
+              </label>
+              <br />
+              <label htmlFor="zip">
+                <b>zip code</b>
+                <br />
+                <input
+                  name="zipcode"
+                  type="number"
+                  placeholder='e.g., "78758"'
+                />
+              </label>
+              <br />
+              <button id="submitBtn">submit</button>
+            </div>
           </form>
         </div>
         <button onClick={() => this.handleClick()} id="requestBtn">
-          New Request
+          New Inventory
         </button>
-        <InventoryList />
-        <ul id="need-list"></ul>
       </div>
     );
   }

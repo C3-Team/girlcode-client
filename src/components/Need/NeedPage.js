@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-import NeedList from "./NeedList";
 import config from "../../config";
+import InventoryList from "../Inventory/InventoryList";
 
 export default class Needpage extends Component {
   static contextType = MyContext;
@@ -33,57 +33,79 @@ export default class Needpage extends Component {
       res.json().then((need) => this.context.handleAddNeed(need))
     );
 
-    //delete
-    // fetch(`${config.API_ENDPOINT}/needs/${need.id}`, {
-    //   method: "DELETE",
-    // }).then(() => this.context.handleDeleteNeed(need.id));
-    //show and hide the new request btn
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";
   };
 
   render() {
-    // console.log("needs are ", this.context.needs);
     return (
       <div>
+        <p>
+          Here is a list of our local inventory, before making a new need
+          request, check out what your neighbors have to offer.
+        </p>
+        <InventoryList />
+        <ul className="list"></ul>
         <div id="showForm">
           <h1>What do you need?</h1>
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="need">
-              <b>name</b>
-              <input type="text" placeholder="Jane Doe" name="name" required />
-              <b>email</b>
-              <input
-                type="email"
-                name="email"
-                placeholder={"name@gmail.com"}
-                required
-              />
-              <b>tampons</b>
-              <input
-                type="number"
-                name="tampons"
-                placeholder="number of tampons"
-              />
-            </label>
-            <br />
-            <label htmlFor="pads">
-              <b>pads</b>
-              <input type="number" name="pads" placeholder="number of pads" />
-            </label>
-            <br />
-            <label htmlFor="zip">
-              <b>zip code</b>
-              <input name="zipcode" type="number" placeholder='e.g., "78758"' />
-            </label>
-            <button id="submitBtn">submit</button>
+            <div>
+              <label htmlFor="name">
+                <b>name</b>
+                <br />
+                <input
+                  type="text"
+                  placeholder="Jane Doe"
+                  name="name"
+                  required
+                />
+              </label>
+              <br />
+              <label htmlFor="email">
+                <b>email</b>
+                <br />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={"name@gmail.com"}
+                  required
+                />
+              </label>
+              <br />
+              <label htmlFor="tampons">
+                <b>tampons</b>
+                <br />
+                <input
+                  put
+                  type="number"
+                  name="tampons"
+                  placeholder="number of tampons"
+                />
+              </label>
+              <br />
+              <label htmlFor="pads">
+                <b>pads</b>
+                <br />
+                <input type="number" name="pads" placeholder="number of pads" />
+              </label>
+              <br />
+              <label htmlFor="zip">
+                <b>zip code</b>
+                <br />
+                <input
+                  name="zipcode"
+                  type="number"
+                  placeholder='e.g., "78758"'
+                />
+              </label>
+              <br />
+              <button id="submitBtn">submit</button>
+            </div>
           </form>
         </div>
         <button onClick={() => this.handleClick()} id="requestBtn">
-          New Request
+          New Need
         </button>
-        <NeedList />
-        <ul id="need-list"></ul>
       </div>
     );
   }

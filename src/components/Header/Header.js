@@ -17,6 +17,23 @@ const Header = () => {
               <li>
                 <Link to="/login">Login</Link>
               </li>
+              <li>
+                <Link to="/needpage"> I Need</Link>
+              </li>
+              <li>
+                <Link to="/havepage">I Have</Link>
+              </li>
+              <li>
+                <div className="animate__animated animate__shakeY">
+                  <a
+                    target="_blank"
+                    target="_blank"
+                    href="https://checkout.square.site/merchant/MLZMPESY4AYJD/checkout/TEOJREQNW4MEKLQ7EPCZELUF"
+                  >
+                    Donate
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>

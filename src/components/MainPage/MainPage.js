@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 const MainPage = () => {
   return (
     <footer>
-      <main>
-        <h3>
+      <section>
+        <h3 className="animate__animated animate__fadeInRightBig">
+          Nearly 1 in 4 women in their menstruating years experience “period
+          poverty” ranging from the inability to purchase the products they need
+          to the inability to go to work, school,
+        </h3>
+        <h3 className="animate__animated animate__fadeInLeftBig">
           GirlCode is a platform that matches individuals who need menstrual
           products to ones who can provide products based on zipcode and
           urgency. Ask, and you shall receive!
         </h3>
-        <Link className="need-have" to="/needpage">
-          Needs
-        </Link>
-        <Link className="need-have" to="/havepage">
-          Inventory
-        </Link>
-      </main>
+      </section>
       <br />
-      <footer>&copy; 2020 GirlCode</footer>
+
+      <footer>&copy; 2021 GirlCode</footer>
     </footer>
   );
 };

@@ -81,8 +81,7 @@ export class ContextsProvider extends Component {
     this.setState({
       needs: this.state.needs.filter((need) => need.id !== needId),
     });
-    // console.log(`${needId}`);
-    //delete api
+
     const options = {
       method: "DELETE",
       headers: {
@@ -104,8 +103,7 @@ export class ContextsProvider extends Component {
         (inventory) => inventory.id !== inventoryId
       ),
     });
-    // console.log(`${needId}`);
-    //delete api
+
     const options = {
       method: "DELETE",
       headers: {
@@ -128,6 +126,7 @@ export class ContextsProvider extends Component {
       need: this.state.need,
       inventories: this.state.inventories,
       inventory: this.state.inventory,
+
       handleAddNeed: this.handleAddNeed,
       handleAddInventory: this.handleAddInventory,
       handleDeleteNeed: this.handleDeleteNeed,

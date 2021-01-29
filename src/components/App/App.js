@@ -6,7 +6,6 @@ import InventoryPage from "../Inventory/InventoryPage";
 import NeedList from "../Need/NeedList";
 import InventoryList from "../Inventory/InventoryList";
 import Header from "../Header/Header";
-import "./App.css";
 import Contact from "../Contact/Contact";
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";

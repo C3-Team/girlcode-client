@@ -4,14 +4,14 @@ export default class NeedList extends Component {
   static contextType = MyContext;
   render() {
     return (
-      <div>
+      <div className="list">
         {this.context.needs.map((need) => (
           <li key={need.id}>
             {need.user_name} needs {need.tampons} tampons and {need.pads} pads
             at {need.zipcode}.<a href={`mailto:${need.email}`}>contact</a>
-            <button onClick={() => this.context.handleDeleteNeed(need.id)}>
+            {/* <button onClick={() => this.context.handleDeleteNeed(need.id)}>
               Delete
-            </button>
+            </button> */}
           </li>
         ))}
       </div>
