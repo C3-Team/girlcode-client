@@ -9,19 +9,20 @@ export const MyContext = React.createContext({
     email: "",
     tampons: "",
     pads: "",
-    zipcode: "",
+    location: "",
   },
   inventory: {
     name: "",
     email: "",
     tampons: "",
     pads: "",
-    zipcode: "",
+    location: "",
   },
   handleAddNeed: () => {},
   handleDeleteNeed: () => {},
   handleAddInventory: () => {},
   handleDeleteInventory: () => {},
+  handleUpdateNeed: () => {},
 });
 
 export class ContextsProvider extends Component {
@@ -33,14 +34,14 @@ export class ContextsProvider extends Component {
       email: "emma@gmail.com",
       tampons: "3",
       pads: "4",
-      zipcode: "78758",
+      location: "WA",
     },
     need: {
       name: "emma",
       email: "emma@gmail.com",
       tampons: "3",
       pads: "4",
-      zipcode: "78758",
+      location: "TX",
     },
     error: null,
   };
@@ -76,6 +77,19 @@ export class ContextsProvider extends Component {
     });
   };
 
+  handleFilterNeed = (needLocation) => {
+    this.setState({
+      needs: this.state.needs.filter((need) => need.location == needLocation),
+    });
+    console.log("filtered");
+  };
+  handleFilterInventory = (inventoryLocation) => {
+    this.setState({
+      inventories: this.state.inventories.filter(
+        (inventory) => inventory.location == inventoryLocation
+      ),
+    });
+  };
   handleDeleteNeed = (needId) => {
     console.log("delete");
     this.setState({
@@ -97,7 +111,6 @@ export class ContextsProvider extends Component {
   };
 
   handleDeleteInventory = (inventoryId) => {
-    console.log("delete");
     this.setState({
       inventories: this.state.inventories.filter(
         (inventory) => inventory.id !== inventoryId
@@ -131,6 +144,9 @@ export class ContextsProvider extends Component {
       handleAddInventory: this.handleAddInventory,
       handleDeleteNeed: this.handleDeleteNeed,
       handleDeleteInventory: this.handleDeleteInventory,
+      handleUpdateNeed: this.handleUpdateNeed,
+      handleFilterInventory: this.handleFilterInventory,
+      handleFilterNeed: this.handleFilterNeed,
     };
     return (
       <MyContext.Provider value={value}>

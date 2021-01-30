@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -12,7 +11,7 @@ const MainPage = () => {
         </h3>
         <h3 className="animate__animated animate__fadeInLeftBig">
           GirlCode is a platform that matches individuals who need menstrual
-          products to ones who can provide products based on zipcode and
+          products to ones who can provide products based on location and
           urgency. Ask, and you shall receive!
         </h3>
       </section>

@@ -6,7 +6,7 @@ import InventoryPage from "../Inventory/InventoryPage";
 import NeedList from "../Need/NeedList";
 import InventoryList from "../Inventory/InventoryList";
 import Header from "../Header/Header";
-import Contact from "../Contact/Contact";
+
 import Login from "../Registration/Login";
 import Signup from "../Registration/Signup";
 
@@ -24,7 +24,7 @@ class App extends Component {
         <Route path="/havepage" component={InventoryPage} />
         <Route path="/needform" component={NeedList} />
         <Route path="/haveform" component={InventoryList} />
-        <Route path="/contactform" component={Contact} />
+
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </>

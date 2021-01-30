@@ -83,7 +83,8 @@ li {
   list-style: none;
 }
 
-#showForm {
+#showForm,
+#editForm {
   display: none;
 }
 
