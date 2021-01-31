@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-import NeedList from "../Need/NeedList";
-import config from "../../config";
 
-import { Link } from "react-router-dom";
+import config from "../../config";
 
 export default class Inventorypage extends Component {
   static contextType = MyContext;

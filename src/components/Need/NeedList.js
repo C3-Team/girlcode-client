@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-import config from "../../config";
-import States from "../States";
+
 export default class NeedList extends Component {
   static contextType = MyContext;
   handleFilter = (e) => {

@@ -80,7 +80,7 @@ export class ContextsProvider extends Component {
   handleFilterNeed = (needLocation) => {
     this.setState({
       needs: this.state.needs.filter(
-        (need) => need.need_location == needLocation
+        (need) => need.need_location === needLocation
       ),
     });
     console.log("filtered");
@@ -89,7 +89,7 @@ export class ContextsProvider extends Component {
   handleFilterInventory = (inventoryLocation) => {
     this.setState({
       inventories: this.state.inventories.filter(
-        (inventory) => inventory.inventory_location == inventoryLocation
+        (inventory) => inventory.inventory_location === inventoryLocation
       ),
     });
   };

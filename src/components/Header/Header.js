@@ -37,6 +37,7 @@ const Header = () => {
                 <div className="animate__animated animate__shakeY ">
                   <a
                     target="_blank"
+                    rel="noreferrer"
                     href="https://checkout.square.site/merchant/MLZMPESY4AYJD/checkout/TEOJREQNW4MEKLQ7EPCZELUF"
                   >
                     Donate
