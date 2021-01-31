@@ -24,7 +24,8 @@ class App extends Component {
         <Route path="/havepage" component={InventoryPage} />
         <Route path="/needform" component={NeedList} />
         <Route path="/haveform" component={InventoryList} />
-
+        <Route path="/havelist" component={InventoryList} />
+        <Route path="/needlist" component={NeedList} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
       </>

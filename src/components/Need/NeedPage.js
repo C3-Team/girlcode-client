@@ -34,8 +34,9 @@ export default class Needpage extends Component {
       res.json().then((need) => this.context.handleAddNeed(need))
     );
 
-    document.getElementById("requestBtn").style.display = "block";
-    document.getElementById("showForm").style.display = "none";
+    // document.getElementById("requestBtn").style.display = "block";
+
+    this.props.history.push("/needlist");
   };
   handleCancel = () => {
     document.getElementById("showForm").style.display = "none";
@@ -45,13 +46,8 @@ export default class Needpage extends Component {
   render() {
     return (
       <div>
-        <p>
-          Here is a list of our local inventory, before making a new need
-          request, check out what your neighbors have to offer.
-        </p>
-        <InventoryList />
         <ul className="list"></ul>
-        <div id="showForm">
+        <div>
           <h1>What do you need?</h1>
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -97,11 +93,7 @@ export default class Needpage extends Component {
               <label htmlFor="location">
                 <b>location</b>
                 <br />
-                {/* <input
-                  name="zipcode"
-                  type="number"
-                  placeholder='e.g., "78758"'
-                /> */}
+
                 <select name="location" id="">
                   <option value="AL">AL</option>
                   <option value="AK">AK</option>
@@ -162,9 +154,6 @@ export default class Needpage extends Component {
             </div>
           </form>
         </div>
-        <button onClick={() => this.handleClick()} id="requestBtn">
-          New Need
-        </button>
       </div>
     );
   }

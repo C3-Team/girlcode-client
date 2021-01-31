@@ -9,24 +9,32 @@ const Header = () => {
             <a href="/" className="brand-logo">
               <h1>&nbsp;GirlCode</h1>
             </a>
-            <ul className="nav-links">
-              <li>
-                <Link to="/signup"> Sign-up </Link>
-              </li>
-
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/needpage"> I Need</Link>
-              </li>
-              <li>
-                <Link to="/havepage">I Have</Link>
-              </li>
-              <li>
-                <div className="animate__animated animate__shakeY">
+            <ul className="nav-links dropdown">
+              <button className="dropbtn">Needs</button>
+              <div className="dropdown-content">
+                <div>
+                  <Link to="/needlist">List of Needs</Link>
+                </div>
+                <div>
+                  <Link to="/needpage"> Post a need</Link>
+                </div>
+              </div>
+            </ul>
+            <ul className="nav-links dropdown">
+              <button className="dropbtn">Inventories</button>
+              <div className="dropdown-content">
+                <div>
+                  <Link to="/havelist">List of Inventories</Link>
+                </div>
+                <div>
+                  <Link to="/havepage">Post an inventory</Link>
+                </div>
+              </div>
+            </ul>
+            <ul className="nav-links ">
+              <li className="donatebtn">
+                <div className="animate__animated animate__shakeY ">
                   <a
-                    target="_blank"
                     target="_blank"
                     href="https://checkout.square.site/merchant/MLZMPESY4AYJD/checkout/TEOJREQNW4MEKLQ7EPCZELUF"
                   >

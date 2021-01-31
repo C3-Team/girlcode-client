@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
 import NeedList from "../Need/NeedList";
 import config from "../../config";
-import moment from "moment";
+
+import { Link } from "react-router-dom";
 
 export default class Inventorypage extends Component {
   static contextType = MyContext;
@@ -32,25 +33,17 @@ export default class Inventorypage extends Component {
     fetch(`${config.API_ENDPOINT}/inventories`, postOptions).then((res) =>
       res.json().then((inventory) => this.context.handleAddInventory(inventory))
     );
-
-    document.getElementById("requestBtn").style.display = "block";
-    document.getElementById("showForm").style.display = "none";
+    this.props.history.push("/havelist");
   };
   handleCancel = () => {
     document.getElementById("showForm").style.display = "none";
     document.getElementById("requestBtn").style.display = "block";
   };
   render() {
-    // console.log("needs are ", this.context.needs);
     return (
       <div>
-        <p>
-          Here is a list of our local needs, before making a new inventory ,
-          check out what your neighbors need.
-        </p>
-        <NeedList />
         <ul className="list"></ul>
-        <div id="showForm">
+        <div>
           <h1>What do you have?</h1>
           <form onSubmit={this.handleSubmit}>
             <div>
@@ -157,9 +150,6 @@ export default class Inventorypage extends Component {
             </div>
           </form>
         </div>
-        <button onClick={() => this.handleClick()} id="requestBtn">
-          New Inventory
-        </button>
       </div>
     );
   }
