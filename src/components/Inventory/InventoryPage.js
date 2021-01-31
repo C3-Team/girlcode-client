@@ -18,9 +18,8 @@ export default class Inventorypage extends Component {
       email: e.target.email.value,
       tampons: e.target.tampons.value,
       pads: e.target.pads.value,
-      location: e.target.location.value,
+      inventory_location: e.target.location.value,
     };
-    console.log(inventory.location);
     //post
     const postOptions = {
       method: "POST",
@@ -33,7 +32,7 @@ export default class Inventorypage extends Component {
     fetch(`${config.API_ENDPOINT}/inventories`, postOptions).then((res) =>
       res.json().then((inventory) => this.context.handleAddInventory(inventory))
     );
-    //show and hide the new request btn
+
     document.getElementById("requestBtn").style.display = "block";
     document.getElementById("showForm").style.display = "none";
   };

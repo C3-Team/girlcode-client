@@ -132,6 +132,11 @@ export class ContextsProvider extends Component {
       }
     );
   };
+  handleEditNeed = (need) => {
+    this.setState({
+      needs: [...this.state.needs, need],
+    });
+  };
 
   render() {
     let value = {
@@ -144,9 +149,9 @@ export class ContextsProvider extends Component {
       handleAddInventory: this.handleAddInventory,
       handleDeleteNeed: this.handleDeleteNeed,
       handleDeleteInventory: this.handleDeleteInventory,
-      handleUpdateNeed: this.handleUpdateNeed,
       handleFilterInventory: this.handleFilterInventory,
       handleFilterNeed: this.handleFilterNeed,
+      handleEditNeed: this.handleEditNeed,
     };
     return (
       <MyContext.Provider value={value}>
