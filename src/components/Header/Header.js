@@ -6,9 +6,10 @@ const Header = () => {
       <header className="header">
         <nav>
           <div>
-            <a href="/" className="brand-logo">
+            <Link to="/" className="brand-logo">
+              {" "}
               <h1>&nbsp;GirlCode</h1>
-            </a>
+            </Link>
             <ul className="nav-links dropdown">
               <button className="dropbtn">Needs</button>
               <div className="dropdown-content">

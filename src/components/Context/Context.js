@@ -79,14 +79,17 @@ export class ContextsProvider extends Component {
 
   handleFilterNeed = (needLocation) => {
     this.setState({
-      needs: this.state.needs.filter((need) => need.location == needLocation),
+      needs: this.state.needs.filter(
+        (need) => need.need_location == needLocation
+      ),
     });
     console.log("filtered");
   };
+
   handleFilterInventory = (inventoryLocation) => {
     this.setState({
       inventories: this.state.inventories.filter(
-        (inventory) => inventory.location == inventoryLocation
+        (inventory) => inventory.inventory_location == inventoryLocation
       ),
     });
   };
@@ -132,11 +135,6 @@ export class ContextsProvider extends Component {
       }
     );
   };
-  handleEditNeed = (need) => {
-    this.setState({
-      needs: [...this.state.needs, need],
-    });
-  };
 
   render() {
     let value = {
@@ -151,7 +149,6 @@ export class ContextsProvider extends Component {
       handleDeleteInventory: this.handleDeleteInventory,
       handleFilterInventory: this.handleFilterInventory,
       handleFilterNeed: this.handleFilterNeed,
-      handleEditNeed: this.handleEditNeed,
     };
     return (
       <MyContext.Provider value={value}>

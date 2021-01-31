@@ -2,10 +2,11 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
 body {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  /* font-family: "Source Sans Pro", Helvetica, sans-serif; */
   color: #414f57;
   line-height: 2;
   letter-spacing: 0.2em;
@@ -69,13 +70,68 @@ section {
 }
 
 .dropbtn {
-  background-color: tomato;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
+  background-color: white;
+  color: tomato;
+  padding: 15px;
+  font-size: 18px;
   border: none;
 }
+@media only screen and (max-width: 600px) {
+  .dropbtn,
+  .donatebtn {
+    padding: 8px;
+    font-size: 12px;
+    border: none;
+  }
+}
 
+.btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 0.2px solid transparent;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  line-height: 1;
+  margin: 10px;
+  padding: 0.2em 1.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  float: left;
+}
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.delete-edit {
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.delete-edit:hover {
+  color: #fff;
+  box-shadow: 0 0 40px 40px #f51900 inset;
+}
+.contact:hover {
+  color: #fff;
+  box-shadow: 0 0 40px 40px #1ce91c inset;
+}
+.edit:hover {
+  color: black;
+  box-shadow: 0 0 40px 40px yellow inset;
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -102,7 +158,7 @@ section {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: white;
 }
 .need-have {
   margin: 20px auto 0;
@@ -130,16 +186,27 @@ li {
 }
 
 .list {
-  display: flex;
+  /* display: inline-block; */
   flex-direction: column;
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  text-transform: uppercase;
 }
 .list-item {
-  padding: 10px;
-  margin: 1px;
-  border-style: solid;
+  max-width: 550px;
+  padding: 20px 0 60px 10px;
+  margin: 12px;
+  border: 0.25px solid rgb(116, 113, 113);
 }
 
 .cancel-edit {
   display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .dropbtn,
+  .donatebtn {
+    padding: 8px;
+    font-size: 12px;
+    border: none;
+  }
 }
