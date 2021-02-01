@@ -6,11 +6,6 @@ import States from "../States";
 export default class Needpage extends Component {
   static contextType = MyContext;
 
-  handleClick = () => {
-    document.getElementById("showForm").style.display = "block";
-    document.getElementById("requestBtn").style.display = "none";
-  };
-
   handleSubmit = (e) => {
     e.preventDefault();
     const need = {
@@ -35,8 +30,7 @@ export default class Needpage extends Component {
     this.props.history.push("/needlist");
   };
   handleCancel = () => {
-    document.getElementById("showForm").style.display = "none";
-    document.getElementById("requestBtn").style.display = "block";
+    this.props.history.push("/needlist");
   };
 
   render() {

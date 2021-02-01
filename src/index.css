@@ -112,7 +112,6 @@ section {
 }
 .btn:hover,
 .btn:focus {
-  color: #fff;
   outline: 0;
 }
 
@@ -121,11 +120,11 @@ section {
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
 .delete-edit:hover {
-  color: #fff;
+  color: rgb(31, 29, 29);
   box-shadow: 0 0 40px 40px #f51900 inset;
 }
 .contact:hover {
-  color: #fff;
+  color: rgb(20, 18, 18);
   box-shadow: 0 0 40px 40px #1ce91c inset;
 }
 .edit:hover {
@@ -179,10 +178,12 @@ li {
   list-style: none;
 }
 
-#showForm,
 #editForm,
 #showMsg {
   display: none;
+}
+#showForm {
+  display: block;
 }
 
 .list {

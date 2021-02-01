@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-
+import EditNeed from "./EditNeed";
 export default class NeedList extends Component {
+  state = {
+    isHidden: true,
+  };
   static contextType = MyContext;
   handleFilter = (e) => {
-    const state = e.target.value;
+    let state = e.target.value;
     console.log(state);
     this.context.handleFilterNeed(state);
+  };
+  handleEdit = (needId) => {
+    this.setState({
+      isHidden: !this.state.isHidden,
+    });
+    console.log(needId);
   };
 
   render() {
@@ -16,7 +25,7 @@ export default class NeedList extends Component {
           <label htmlFor="states">
             Filter by states
             <select name="location" id="states" onChange={this.handleFilter}>
-              <option value=" ">show all</option>
+              <option value="">show all</option>
               <option value="AL">AL</option>
               <option value="AK">AK</option>
               <option value="AZ">AZ</option>
@@ -85,7 +94,20 @@ export default class NeedList extends Component {
                     Delete
                   </button>
 
-                  <button className="btn delete-edit edit ">Edit</button>
+                  <button
+                    onClick={() => this.handleEdit(need.id)}
+                    className="btn delete-edit edit "
+                  >
+                    Edit
+                  </button>
+                  {!this.state.isHidden && (
+                    <EditNeed
+                      key={need.id}
+                      name={need.user_name}
+                      needId={need.id}
+                    />
+                  )}
+
                   <a href={`mailto:${need.email}`}>
                     <button className="btn delete-edit contact">contact</button>
                   </a>
