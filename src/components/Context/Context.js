@@ -4,6 +4,7 @@ import config from "../../config";
 export const MyContext = React.createContext({
   needs: [],
   inventories: [],
+  filterByState: null,
   need: {
     name: "",
     email: "",
@@ -28,6 +29,7 @@ export const MyContext = React.createContext({
 export class ContextsProvider extends Component {
   state = {
     needs: [],
+    filterByState: null,
     inventories: [],
     inventory: {
       name: "emma",
@@ -78,12 +80,10 @@ export class ContextsProvider extends Component {
   };
 
   handleFilterNeed = (needLocation) => {
+    console.log(needLocation);
     this.setState({
-      needs: this.state.needs.filter(
-        (need) => need.need_location === needLocation
-      ),
+      filterByState: needLocation,
     });
-    console.log("filtered");
   };
 
   handleFilterInventory = (inventoryLocation) => {
@@ -141,13 +141,21 @@ export class ContextsProvider extends Component {
     needs[foundIndex] = newNeed;
     this.setState({ needs });
   };
+  handleEditInventory = (inventoryId, newInventory) => {
+    let inventories = [...this.state.inventories];
+    let foundIndex = inventories.findIndex(
+      (inventory) => inventory.id === inventoryId
+    );
+    inventories[foundIndex] = newInventory;
+    this.setState({ inventories });
+  };
   render() {
     let value = {
       needs: this.state.needs,
       need: this.state.need,
       inventories: this.state.inventories,
       inventory: this.state.inventory,
-
+      filterByState: this.state.filterByState,
       handleAddNeed: this.handleAddNeed,
       handleAddInventory: this.handleAddInventory,
       handleDeleteNeed: this.handleDeleteNeed,
@@ -155,6 +163,7 @@ export class ContextsProvider extends Component {
       handleFilterInventory: this.handleFilterInventory,
       handleFilterNeed: this.handleFilterNeed,
       handleEditNeed: this.handleEditNeed,
+      handleEditInventory: this.handleEditInventory,
     };
     return (
       <MyContext.Provider value={value}>

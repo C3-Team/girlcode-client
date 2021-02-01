@@ -1,42 +1,38 @@
 import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
-import config from "../../config";
 import States from "../States";
+import config from "../../config";
 
-export default class Needpage extends Component {
+class EditInventory extends Component {
   static contextType = MyContext;
-
   handleSubmit = (e) => {
     e.preventDefault();
-    const need = {
+    const newInventory = {
       user_name: e.target.name.value,
       email: e.target.email.value,
       tampons: e.target.tampons.value,
       pads: e.target.pads.value,
-      need_location: e.target.location.value,
+      inventory_location: e.target.location.value,
     };
-    //post
-    const postOptions = {
-      method: "POST",
-      body: JSON.stringify(need),
+    // console.log(newNeed);
+    const patchOptions = {
+      method: "PATCH",
+      body: JSON.stringify(newInventory),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${config.API_KEY}`,
       },
     };
-    fetch(`${config.API_ENDPOINT}/needs`, postOptions).then((res) =>
-      res.json().then((need) => this.context.handleAddNeed(need))
+    fetch(
+      `${config.API_ENDPOINT}/inventories/${this.props.inventoryId}`,
+      patchOptions
+    ).then(() =>
+      this.context.handleEditInventory(this.props.inventoryId, newInventory)
     );
-    this.props.history.push("/needlist");
   };
-  handleCancel = () => {
-    this.props.history.push("/needlist");
-  };
-
   render() {
     return (
-      <div>
-        <h1>What do you need?</h1>
+      <>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="name">
@@ -82,7 +78,8 @@ export default class Needpage extends Component {
             <button onClick={() => this.handleCancel()}>cancel</button>
           </div>
         </form>
-      </div>
+      </>
     );
   }
 }
+export default EditInventory;

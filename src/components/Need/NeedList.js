@@ -7,9 +7,9 @@ export default class NeedList extends Component {
   };
   static contextType = MyContext;
   handleFilter = (e) => {
-    let state = e.target.value;
-    console.log(state);
-    this.context.handleFilterNeed(state);
+    let location = e.target.value;
+    console.log(location);
+    this.context.handleFilterNeed(location);
   };
   handleEdit = (needId) => {
     if (this.state.expanded_item === needId) {
@@ -21,10 +21,16 @@ export default class NeedList extends Component {
         expanded_item: needId,
       });
     }
-    console.log(needId);
   };
 
   render() {
+    let needs = this.context.needs;
+    console.log(this.context.filterByState);
+    if (this.context.filterByState) {
+      needs = this.context.needs.filter(
+        (need) => need.need_location === this.context.filterByState
+      );
+    }
     return (
       <>
         <div>
@@ -87,37 +93,35 @@ export default class NeedList extends Component {
           </label>
         </div>
         <div className="list">
-          {this.context.needs.map((need) => (
+          {needs.map((need) => (
             <li key={need.id} className="list-item">
               {need.user_name} needs {need.tampons} tampons and {need.pads} pads
               in {need.need_location}.
               <div>
-                <div>
-                  <button
-                    className="btn delete-edit"
-                    onClick={() => this.context.handleDeleteNeed(need.id)}
-                  >
-                    Delete
-                  </button>
+                <button
+                  className="btn delete-edit"
+                  onClick={() => this.context.handleDeleteNeed(need.id)}
+                >
+                  Delete
+                </button>
 
-                  <button
-                    onClick={() => this.handleEdit(need.id)}
-                    className="btn delete-edit edit "
-                  >
-                    Edit
-                  </button>
-                  {this.state.expanded_item === need.id && (
-                    <EditNeed
-                      key={need.id}
-                      name={need.user_name}
-                      needId={need.id}
-                    />
-                  )}
+                <button
+                  onClick={() => this.handleEdit(need.id)}
+                  className="btn delete-edit edit "
+                >
+                  Edit
+                </button>
+                {this.state.expanded_item === need.id && (
+                  <EditNeed
+                    key={need.id}
+                    name={need.user_name}
+                    needId={need.id}
+                  />
+                )}
 
-                  <a href={`mailto:${need.email}`}>
-                    <button className="btn delete-edit contact">contact</button>
-                  </a>
-                </div>
+                <a href={`mailto:${need.email}`}>
+                  <button className="btn delete-edit contact">contact</button>
+                </a>
               </div>
             </li>
           ))}
