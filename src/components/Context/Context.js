@@ -140,9 +140,6 @@ export class ContextsProvider extends Component {
     let foundIndex = needs.findIndex((need) => need.id === needId);
     needs[foundIndex] = newNeed;
     this.setState({ needs });
-
-    // console.log(found);
-    // console.log(newNeed);
   };
   render() {
     let value = {

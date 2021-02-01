@@ -3,7 +3,6 @@ import { MyContext } from "../Context/Context";
 import EditNeed from "./EditNeed";
 export default class NeedList extends Component {
   state = {
-    isHidden: true,
     expanded_item: null,
   };
   static contextType = MyContext;
