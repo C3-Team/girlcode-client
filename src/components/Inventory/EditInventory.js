@@ -14,7 +14,7 @@ class EditInventory extends Component {
       pads: e.target.pads.value,
       inventory_location: e.target.location.value,
     };
-    // console.log(newNeed);
+
     const patchOptions = {
       method: "PATCH",
       body: JSON.stringify(newInventory),
@@ -30,53 +30,78 @@ class EditInventory extends Component {
       this.context.handleEditInventory(this.props.inventoryId, newInventory)
     );
   };
+
   render() {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">
-              <b>name</b>
-              <br />
-              <input type="text" placeholder="Jane Doe" name="name" required />
-            </label>
-            <br />
-            <label htmlFor="email">
-              <b>email</b>
-              <br />
+          <ul className="form-style-1">
+            <li>
+              <label htmlFor="name">
+                <b>Name</b>
+                <br />
+                <span className="required">*</span>
+              </label>
               <input
+                className="field-long"
+                type="text"
+                placeholder="Jane Doe"
+                name="name"
+                required
+              />
+            </li>
+            <br />
+            <li>
+              <label htmlFor="email">
+                <span className="required">*</span>
+                <b>email</b>
+                <br />
+              </label>
+              <input
+                className="field-long"
                 type="email"
                 name="email"
                 placeholder={"name@gmail.com"}
                 required
               />
-            </label>
+            </li>
             <br />
-            <label htmlFor="tampons">
-              <b>tampons</b>
-              <br />
+            <li>
+              <label htmlFor="tampons">
+                <b>tampons</b>
+                <br />
+              </label>
               <input
+                className="field-long"
                 type="number"
                 name="tampons"
                 placeholder="number of tampons"
               />
-            </label>
+            </li>
             <br />
-            <label htmlFor="pads">
-              <b>pads</b>
-              <br />
-              <input type="number" name="pads" placeholder="number of pads" />
-            </label>
+            <li>
+              <label htmlFor="pads">
+                <b>pads</b>
+                <br />
+              </label>
+              <input
+                className="field-long"
+                type="number"
+                name="pads"
+                placeholder="number of pads"
+              />
+            </li>
             <br />
+
             <label htmlFor="location">
               <b>location</b>
-              <br />
-              <States />
             </label>
             <br />
+            <States />
+
+            <br />
             <button id="submitBtn">submit</button>
-            <button onClick={() => this.handleCancel()}>cancel</button>
-          </div>
+          </ul>
         </form>
       </>
     );

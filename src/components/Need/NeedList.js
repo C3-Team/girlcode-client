@@ -8,7 +8,6 @@ export default class NeedList extends Component {
   static contextType = MyContext;
   handleFilter = (e) => {
     let location = e.target.value;
-    console.log(location);
     this.context.handleFilterNeed(location);
   };
   handleEdit = (needId) => {
@@ -25,10 +24,10 @@ export default class NeedList extends Component {
 
   render() {
     let needs = this.context.needs;
-    console.log(this.context.filterByState);
-    if (this.context.filterByState) {
+
+    if (this.context.filterByStateNeed) {
       needs = this.context.needs.filter(
-        (need) => need.need_location === this.context.filterByState
+        (need) => need.need_location === this.context.filterByStateNeed
       );
     }
     return (
@@ -99,13 +98,6 @@ export default class NeedList extends Component {
               in {need.need_location}.
               <div>
                 <button
-                  className="btn delete-edit"
-                  onClick={() => this.context.handleDeleteNeed(need.id)}
-                >
-                  Delete
-                </button>
-
-                <button
                   onClick={() => this.handleEdit(need.id)}
                   className="btn delete-edit edit "
                 >
@@ -118,10 +110,15 @@ export default class NeedList extends Component {
                     needId={need.id}
                   />
                 )}
-
                 <a href={`mailto:${need.email}`}>
                   <button className="btn delete-edit contact">contact</button>
                 </a>
+                <button
+                  className="btn delete-edit"
+                  onClick={() => this.context.handleDeleteNeed(need.id)}
+                >
+                  Delete
+                </button>
               </div>
             </li>
           ))}

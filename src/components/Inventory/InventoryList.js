@@ -7,9 +7,8 @@ export default class InventoryList extends Component {
   };
   static contextType = MyContext;
   handleFilter = (e) => {
-    let state = e.target.value;
-
-    this.context.handleFilterInventory(state);
+    let location = e.target.value;
+    this.context.handleFilterInventory(location);
   };
   handleEdit = (inventoryId) => {
     if (this.state.expanded_item === inventoryId) {
@@ -23,6 +22,13 @@ export default class InventoryList extends Component {
     }
   };
   render() {
+    let inventories = this.context.inventories;
+    if (this.context.filterByStateInventory) {
+      inventories = this.context.inventories.filter(
+        (inventory) =>
+          inventory.inventory_location === this.context.filterByStateInventory
+      );
+    }
     return (
       <>
         <div>
@@ -91,14 +97,6 @@ export default class InventoryList extends Component {
               {inventory.pads} pads in {inventory.inventory_location}.{" "}
               <div>
                 <button
-                  className="btn delete-edit"
-                  onClick={() =>
-                    this.context.handleDeleteInventory(inventory.id)
-                  }
-                >
-                  Delete
-                </button>
-                <button
                   className="btn delete-edit edit"
                   onClick={() => this.handleEdit(inventory.id)}
                 >
@@ -114,6 +112,14 @@ export default class InventoryList extends Component {
                 <a href={`mailto:${inventory.email}`}>
                   <button className="btn delete-edit contact">contact</button>
                 </a>
+                <button
+                  className="btn delete-edit"
+                  onClick={() =>
+                    this.context.handleDeleteInventory(inventory.id)
+                  }
+                >
+                  Delete
+                </button>
               </div>
             </li>
           ))}
