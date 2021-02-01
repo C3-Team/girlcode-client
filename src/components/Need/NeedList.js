@@ -4,6 +4,7 @@ import EditNeed from "./EditNeed";
 export default class NeedList extends Component {
   state = {
     isHidden: true,
+    expanded_item: null,
   };
   static contextType = MyContext;
   handleFilter = (e) => {
@@ -12,9 +13,15 @@ export default class NeedList extends Component {
     this.context.handleFilterNeed(state);
   };
   handleEdit = (needId) => {
-    this.setState({
-      isHidden: !this.state.isHidden,
-    });
+    if (this.state.expanded_item === needId) {
+      this.setState({
+        expanded_item: null,
+      });
+    } else {
+      this.setState({
+        expanded_item: needId,
+      });
+    }
     console.log(needId);
   };
 
@@ -100,7 +107,7 @@ export default class NeedList extends Component {
                   >
                     Edit
                   </button>
-                  {!this.state.isHidden && (
+                  {this.state.expanded_item === need.id && (
                     <EditNeed
                       key={need.id}
                       name={need.user_name}

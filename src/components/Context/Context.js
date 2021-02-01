@@ -135,10 +135,14 @@ export class ContextsProvider extends Component {
       }
     );
   };
-  handleEditNeed = (needId) => {
-    let found = this.state.needs.find((need) => need.id === needId);
+  handleEditNeed = (needId, newNeed) => {
+    let needs = [...this.state.needs];
+    let foundIndex = needs.findIndex((need) => need.id === needId);
+    needs[foundIndex] = newNeed;
+    this.setState({ needs });
 
-    console.log(found);
+    // console.log(found);
+    // console.log(newNeed);
   };
   render() {
     let value = {
