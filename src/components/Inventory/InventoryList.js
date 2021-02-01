@@ -23,10 +23,10 @@ export default class InventoryList extends Component {
   };
   render() {
     let inventories = this.context.inventories;
-    if (this.context.filterByStateInventory) {
+    if (this.context.filterByState) {
       inventories = this.context.inventories.filter(
         (inventory) =>
-          inventory.inventory_location === this.context.filterByStateInventory
+          inventory.inventory_location === this.context.filterByState
       );
     }
     return (
@@ -91,7 +91,7 @@ export default class InventoryList extends Component {
           </label>
         </div>
         <div className="list">
-          {this.context.inventories.map((inventory) => (
+          {inventories.map((inventory) => (
             <li key={inventory.id} className="list-item">
               {inventory.user_name} has {inventory.tampons} tampons and{" "}
               {inventory.pads} pads in {inventory.inventory_location}.{" "}

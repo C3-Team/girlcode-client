@@ -24,10 +24,9 @@ export default class NeedList extends Component {
 
   render() {
     let needs = this.context.needs;
-
-    if (this.context.filterByStateNeed) {
+    if (this.context.filterByState) {
       needs = this.context.needs.filter(
-        (need) => need.need_location === this.context.filterByStateNeed
+        (need) => need.need_location === this.context.filterByState
       );
     }
     return (
