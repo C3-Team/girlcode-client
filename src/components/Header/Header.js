@@ -34,7 +34,7 @@ const Header = () => {
             </ul>
             <ul className="nav-links ">
               <li className="donatebtn">
-                <div className="animate__animated animate__shakeY ">
+                <div className="animate__animated animate__swing ">
                   <a
                     target="_blank"
                     rel="noreferrer"

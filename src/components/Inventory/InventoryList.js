@@ -92,7 +92,10 @@ export default class InventoryList extends Component {
         </div>
         <div className="list">
           {inventories.map((inventory) => (
-            <li key={inventory.id} className="list-item">
+            <li
+              key={inventory.id}
+              className="list-item animate__animated animate__backInLeft"
+            >
               {inventory.user_name} has {inventory.tampons} tampons and{" "}
               {inventory.pads} pads in {inventory.inventory_location}.{" "}
               <div>

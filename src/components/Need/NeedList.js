@@ -92,7 +92,10 @@ export default class NeedList extends Component {
         </div>
         <div className="list">
           {needs.map((need) => (
-            <li key={need.id} className="list-item">
+            <li
+              key={need.id}
+              className="list-item animate__animated animate__backInLeft"
+            >
               {need.user_name} needs {need.tampons} tampons and {need.pads} pads
               in {need.need_location}.
               <div>

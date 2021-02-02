@@ -179,7 +179,6 @@ li {
 }
 
 .list {
-  /* display: inline-block; */
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -188,7 +187,7 @@ li {
 .list-item {
   max-width: 550px;
   padding: 20px 0 60px 10px;
-  margin: 12px;
+  margin: 20px;
   border: 0.25px solid rgb(116, 113, 113);
 }
 
@@ -286,5 +285,8 @@ select {
     padding: 8px;
     font-size: 12px;
     border: none;
+  }
+  * {
+    font-size: 10px;
   }
 }
