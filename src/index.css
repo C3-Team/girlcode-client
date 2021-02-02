@@ -173,24 +173,36 @@ footer {
   text-align: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
 li {
   padding: 0 10px;
   list-style: none;
+  left: 50%;
+  right: 50%;
+  /* display: table; */
 }
 
 .list {
   flex-direction: column;
   text-align: center;
-  align-items: center;
   text-transform: uppercase;
 }
 .list-item {
+  width: 450px;
   max-width: 550px;
   padding: 20px 0 60px 10px;
   margin: 20px;
   border: 0.25px solid rgb(116, 113, 113);
 }
 
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cancel-edit {
   display: flex;
 }
