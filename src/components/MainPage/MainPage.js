@@ -5,7 +5,7 @@ const MainPage = () => {
     <>
       <section>
         <div className="first">
-          <h3 className=" animate__animated animate__fadeInRightBig">
+          <h3 className=" animate__animated animate__fadeIn">
             Nearly 1 in 4 women in their menstruating years experience “period
             poverty” ranging from the inability to purchase the products they
             need to the inability to go to work, school and go on with their day
@@ -13,7 +13,7 @@ const MainPage = () => {
           </h3>
         </div>
         <div className="second">
-          <h3 className=" animate__animated animate__fadeInLeftBig">
+          <h3 className=" animate__animated animate__fadeIn">
             GirlCode is a platform that matches individuals who need menstrual
             products to ones who can provide products based on location and
             urgency. Ask, and you shall receive!
