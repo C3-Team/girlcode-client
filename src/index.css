@@ -367,3 +367,9 @@ select {
     border: 0.25px solid rgb(116, 113, 113);
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  input {
+    font-size: 16px;
+  }
+}
