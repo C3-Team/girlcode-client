@@ -40,7 +40,8 @@ class EditNeed extends Component {
                   <b>Name</b>
                 </label>
                 <input
-                  value={this.props.name}
+                  type="text"
+                  defaultValue={this.props.name}
                   className="field-long"
                   type="text"
                   placeholder="Jane Doe"
@@ -55,7 +56,7 @@ class EditNeed extends Component {
                   <br />
                 </label>
                 <input
-                  value={this.props.email}
+                  defaultValue={this.props.email}
                   className="field-long"
                   type="email"
                   name="email"
@@ -70,7 +71,7 @@ class EditNeed extends Component {
                   <br />
                 </label>
                 <input
-                  value={this.props.tampons}
+                  defaultValue={this.props.tampons}
                   className="field-long"
                   type="number"
                   name="tampons"
@@ -84,7 +85,7 @@ class EditNeed extends Component {
                   <br />
                 </label>
                 <input
-                  value={this.props.pads}
+                  defaultValue={this.props.pads}
                   className="field-long"
                   type="number"
                   name="pads"

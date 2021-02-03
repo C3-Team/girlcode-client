@@ -6,7 +6,7 @@ const States = (props) => {
       name="location"
       className="field-select"
       id="location"
-      value={props.location}
+      defaultValue={props.location}
     >
       <option value="AL">AL</option>
       <option value="AK">AK</option>
