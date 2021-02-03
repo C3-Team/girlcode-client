@@ -22,7 +22,7 @@ const MainPage = () => {
         <div>
           <h3 className="second animate__animated animate__pulse">
             Post your <Link to="/needpage">Needs</Link> or{" "}
-            <Link to="/havepage">INVENTORIES</Link>, but before that check out
+            <Link to="/havepage">INVENTORIES</Link>, but before that, check out
             what your neighbors <Link to="/needlist">NEED</Link> or
             <Link to="/havelist"> HAVE</Link>.
           </h3>
