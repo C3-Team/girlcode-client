@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ContextsProvider } from "./components/Context/Context";
 
-console.log(process.env);
 ReactDOM.render(
   // <InventoriesProvider>
   <ContextsProvider>
