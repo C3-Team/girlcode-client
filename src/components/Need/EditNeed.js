@@ -43,7 +43,6 @@ class EditNeed extends Component {
                   type="text"
                   defaultValue={this.props.name}
                   className="field-long"
-                  type="text"
                   placeholder="Jane Doe"
                   name="name"
                   required
