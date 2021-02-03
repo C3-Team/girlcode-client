@@ -100,7 +100,7 @@ export default class NeedList extends Component {
             {needs.map((need) => (
               <li
                 key={need.id}
-                className="list-item animate__animated animate__backInLeft"
+                className="list-item animate__animated  animate__fadeInUp"
               >
                 {need.user_name} needs {need.tampons} tampons and {need.pads}{" "}
                 pads in {need.need_location}.

@@ -100,7 +100,7 @@ export default class InventoryList extends Component {
             {inventories.map((inventory) => (
               <li
                 key={inventory.id}
-                className="list-item animate__animated animate__backInLeft"
+                className="list-item animate__animated animate__fadeInUp"
               >
                 {inventory.user_name} has {inventory.tampons} tampons and{" "}
                 {inventory.pads} pads in {inventory.inventory_location}.{" "}
