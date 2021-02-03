@@ -34,7 +34,10 @@ export default class NeedList extends Component {
         <div>
           <label htmlFor="states">
             <div className="filter">
-              Filter by states
+              <span className="filter-text">
+                <b>Filter by states</b>{" "}
+              </span>
+              <br />
               <select name="location" id="states" onChange={this.handleFilter}>
                 <option value="">show all</option>
                 <option value="AL">AL</option>

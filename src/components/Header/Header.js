@@ -33,8 +33,8 @@ const Header = () => {
               </div>
             </ul>
             <ul className="nav-links ">
-              <li className="donatebtn">
-                <div className="animate__animated animate__swing ">
+              <button className="dropbtn">
+                <div className=" donatebtn animate__animated animate__swing ">
                   <a
                     target="_blank"
                     rel="noreferrer"
@@ -43,7 +43,7 @@ const Header = () => {
                     Donate
                   </a>
                 </div>
-              </li>
+              </button>
             </ul>
           </div>
         </nav>

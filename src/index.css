@@ -13,6 +13,18 @@ body {
   color: rgb(40, 32, 32);
   padding: 10px;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 a:link {
   text-decoration: none;
   color: tomato;
@@ -198,11 +210,6 @@ li {
   border: 0.25px solid rgb(116, 113, 113);
 }
 
-.filter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .cancel-edit {
   display: flex;
 }
@@ -291,6 +298,15 @@ select {
 .form-style-1 .required {
   color: red;
 }
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0 0 0;
+}
+.filter-text {
+  margin: 0 10px;
+}
 @media only screen and (max-width: 600px) {
   .dropbtn,
   .donatebtn {
@@ -300,5 +316,12 @@ select {
   }
   * {
     font-size: 10px;
+  }
+  .list-item {
+    width: 300px;
+    max-width: 550px;
+    padding: 20px 0 60px 10px;
+    margin: 20px;
+    border: 0.25px solid rgb(116, 113, 113);
   }
 }
