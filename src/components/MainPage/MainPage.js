@@ -23,8 +23,8 @@ const MainPage = () => {
           <h3 className="second animate__animated animate__pulse">
             Post your <Link to="/needpage">Needs</Link> or{" "}
             <Link to="/havepage">INVENTORIES</Link>, but before that check out
-            what your neighbor <Link to="/needlist">NEEDS</Link> or
-            <Link to="/havelist"> HAS</Link>.
+            what your neighbors <Link to="/needlist">NEED</Link> or
+            <Link to="/havelist"> HAVE</Link>.
           </h3>
         </div>
         {/* <div className="third">

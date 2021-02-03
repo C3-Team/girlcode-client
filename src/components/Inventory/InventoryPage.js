@@ -119,10 +119,7 @@ export default class Inventorypage extends Component {
               cancel
             </button>
             <button className="btn delete-edit goback">
-              <Link
-                style={{ textDecoration: "none" }}
-                onClick={this.handleGoBack}
-              >
+              <Link to="/" style={{ textDecoration: "none" }}>
                 main page
               </Link>
             </button>
