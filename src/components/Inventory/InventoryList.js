@@ -115,6 +115,10 @@ export default class InventoryList extends Component {
                     <EditInventory
                       key={inventory.id}
                       name={inventory.user_name}
+                      email={inventory.email}
+                      tampons={inventory.tampons}
+                      pads={inventory.pads}
+                      location={inventory.inventory_location}
                       inventoryId={inventory.id}
                     />
                   )}

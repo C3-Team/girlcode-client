@@ -1,8 +1,13 @@
 import React from "react";
 
-const States = () => {
+const States = (props) => {
   return (
-    <select name="location" className="field-select" id="location">
+    <select
+      name="location"
+      className="field-select"
+      id="location"
+      value={props.location}
+    >
       <option value="AL">AL</option>
       <option value="AK">AK</option>
       <option value="AZ">AZ</option>

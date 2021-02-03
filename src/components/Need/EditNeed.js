@@ -33,73 +33,76 @@ class EditNeed extends Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <ul className="form-style-1">
-            <li>
-              <label htmlFor="name">
-                <b>Name</b>
-                <br />
-                <span className="required">*</span>
-              </label>
-              <input
-                className="field-long"
-                type="text"
-                placeholder="Jane Doe"
-                name="name"
-                required
-              />
-            </li>
-            <br />
-            <li>
-              <label htmlFor="email">
-                <span className="required">*</span>
-                <b>email</b>
-                <br />
-              </label>
-              <input
-                className="field-long"
-                type="email"
-                name="email"
-                placeholder={"name@gmail.com"}
-                required
-              />
-            </li>
-            <br />
-            <li>
-              <label htmlFor="tampons">
-                <b>tampons</b>
-                <br />
-              </label>
-              <input
-                className="field-long"
-                type="number"
-                name="tampons"
-                placeholder="number of tampons"
-              />
-            </li>
-            <br />
-            <li>
-              <label htmlFor="pads">
-                <b>pads</b>
-                <br />
-              </label>
-              <input
-                className="field-long"
-                type="number"
-                name="pads"
-                placeholder="number of pads"
-              />
-            </li>
-            <br />
+          <div>
+            <ul className="form-style-1">
+              <li>
+                <label htmlFor="name">
+                  <b>Name</b>
+                </label>
+                <input
+                  value={this.props.name}
+                  className="field-long"
+                  type="text"
+                  placeholder="Jane Doe"
+                  name="name"
+                  required
+                />
+              </li>
+              <br />
+              <li>
+                <label htmlFor="email">
+                  <b>email</b>
+                  <br />
+                </label>
+                <input
+                  value={this.props.email}
+                  className="field-long"
+                  type="email"
+                  name="email"
+                  placeholder={"name@gmail.com"}
+                  required
+                />
+              </li>
+              <br />
+              <li>
+                <label htmlFor="tampons">
+                  <b>tampons</b>
+                  <br />
+                </label>
+                <input
+                  value={this.props.tampons}
+                  className="field-long"
+                  type="number"
+                  name="tampons"
+                  placeholder="number of tampons"
+                />
+              </li>
+              <br />
+              <li>
+                <label htmlFor="pads">
+                  <b>pads</b>
+                  <br />
+                </label>
+                <input
+                  value={this.props.pads}
+                  className="field-long"
+                  type="number"
+                  name="pads"
+                  placeholder="number of pads"
+                />
+              </li>
+              <br />
 
-            <label htmlFor="location">
-              <b>location</b>
-            </label>
-            <br />
-            <States />
+              <label htmlFor="location">
+                <b>location</b>
+              </label>
 
-            <br />
-            <button id="submitBtn">submit</button>
-          </ul>
+              <States location={this.props.location} />
+
+              <br />
+              <button id="submitBtn">submit</button>
+            </ul>
+          </div>
         </form>
       </>
     );

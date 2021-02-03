@@ -115,6 +115,10 @@ export default class NeedList extends Component {
                     <EditNeed
                       key={need.id}
                       name={need.user_name}
+                      email={need.email}
+                      tampons={need.tampons}
+                      pads={need.pads}
+                      location={need.need_location}
                       needId={need.id}
                     />
                   )}

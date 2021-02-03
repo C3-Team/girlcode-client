@@ -6,18 +6,27 @@ const Header = () => {
       <header className="header">
         <nav>
           <div>
-            <Link to="/" className="brand-logo">
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/"
+              className="brand-logo"
+            >
               {" "}
-              <h1>&nbsp;GirlCode</h1>
+              <h1 className="girlcode-logo">&nbsp;GirlCode</h1>
             </Link>
             <ul className="nav-links dropdown">
               <button className="dropbtn">Needs</button>
               <div className="dropdown-content">
                 <div>
-                  <Link to="/needlist">List of Needs</Link>
+                  <Link style={{ textDecoration: "none" }} to="/needlist">
+                    List of Needs
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/needpage"> Post a need</Link>
+                  <Link style={{ textDecoration: "none" }} to="/needpage">
+                    {" "}
+                    Post a need
+                  </Link>
                 </div>
               </div>
             </ul>
@@ -25,10 +34,14 @@ const Header = () => {
               <button className="dropbtn">Inventories</button>
               <div className="dropdown-content">
                 <div>
-                  <Link to="/havelist">List of Inventories</Link>
+                  <Link style={{ textDecoration: "none" }} to="/havelist">
+                    List of Inventories
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/havepage">Post an inventory</Link>
+                  <Link style={{ textDecoration: "none" }} to="/havepage">
+                    Post an inventory
+                  </Link>
                 </div>
               </div>
             </ul>

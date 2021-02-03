@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MyContext } from "../Context/Context";
 import States from "../States";
 import config from "../../config";
+import { Link } from "react-router-dom";
 
 export default class Inventorypage extends Component {
   static contextType = MyContext;
@@ -32,10 +33,13 @@ export default class Inventorypage extends Component {
   handleCancel = () => {
     this.props.history.push("/havelist");
   };
+  handleGoBack = () => {
+    this.props.history.push("/");
+  };
   render() {
     return (
       <div>
-        <h1>What do you have?</h1>
+        <h1 className="inventory-title">What do you have?</h1>
         <form onSubmit={this.handleSubmit}>
           <ul className="form-style-1">
             <li>
@@ -55,9 +59,9 @@ export default class Inventorypage extends Component {
             <br />
             <li>
               <label htmlFor="email">
-                <span className="required">*</span>
                 <b>email</b>
                 <br />
+                <span className="required">*</span>
               </label>
               <input
                 className="field-long"
@@ -72,6 +76,7 @@ export default class Inventorypage extends Component {
               <label htmlFor="tampons">
                 <b>tampons</b>
                 <br />
+                <span className="required">*</span>
               </label>
               <input
                 className="field-long"
@@ -85,6 +90,7 @@ export default class Inventorypage extends Component {
               <label htmlFor="pads">
                 <b>pads</b>
                 <br />
+                <span className="required">*</span>
               </label>
               <input
                 className="field-long"
@@ -97,13 +103,29 @@ export default class Inventorypage extends Component {
 
             <label htmlFor="location">
               <b>location</b>
+              <span className="required">*</span>
             </label>
-            <br />
+
             <States />
 
             <br />
-            <button id="submitBtn">submit</button>
-            <button onClick={() => this.handleCancel()}>cancel</button>
+            <button className="btn delete-edit submit" id="submitBtn">
+              submit
+            </button>
+            <button
+              className="btn delete-edit"
+              onClick={() => this.handleCancel()}
+            >
+              cancel
+            </button>
+            <button className="btn delete-edit goback">
+              <Link
+                style={{ textDecoration: "none" }}
+                onClick={this.handleGoBack}
+              >
+                main page
+              </Link>
+            </button>
           </ul>
         </form>
       </div>

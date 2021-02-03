@@ -3,15 +3,35 @@
 * {
   box-sizing: border-box;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
+  text-decoration: none;
 }
-
 body {
   /* font-family: "Source Sans Pro", Helvetica, sans-serif; */
   color: #414f57;
   line-height: 2;
   letter-spacing: 0.2em;
   color: rgb(40, 32, 32);
-  padding: 10px;
+  padding: 0px;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  text-align: left;
+}
+
+.first {
+  height: 50%;
+  align-content: left;
+}
+
+.second {
+  margin: 40px 0 0 0;
+}
+.girlcode-logo {
+  padding: 0 20px 0 0;
 }
 
 @keyframes gradient {
@@ -25,6 +45,7 @@ body {
     background-position: 0% 50%;
   }
 }
+
 a:link {
   text-decoration: none;
   color: tomato;
@@ -45,16 +66,15 @@ a:active {
   color: tomato;
 }
 section {
-  margin: 0;
-  padding: 0 10px;
+  margin: 20px;
+  padding: 0 1px;
   text-align: left;
 }
 
 .header {
-  margin: 0;
+  margin: 30px 0px;
   padding: 0 10px;
   color: rgb(51, 43, 43);
-  background-color: transparent;
 }
 
 .brand-logo {
@@ -91,7 +111,7 @@ section {
 @media only screen and (max-width: 600px) {
   .dropbtn,
   .donatebtn {
-    padding: 8px;
+    /* padding: 8px; */
     font-size: 12px;
     border: none;
   }
@@ -113,10 +133,10 @@ section {
   display: flex;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
-  align-self: center;
+  align-self: auto;
   line-height: 1;
   margin: 10px;
-  padding: 0.2em 1.8em;
+  padding: 0.4em 1.8em;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
@@ -143,6 +163,17 @@ section {
   color: black;
   box-shadow: 0 0 40px 40px yellow inset;
 }
+
+.submit:hover {
+  color: black;
+  box-shadow: 0 0 40px 40px#1ce91c inset;
+}
+
+.goback:hover {
+  color: black !important;
+  box-shadow: 0 0 40px 40px#1c42e9 inset;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -181,7 +212,7 @@ section {
 }
 
 footer {
-  padding: 0 10px;
+  padding: 200px 10px;
   text-align: center;
 }
 
@@ -194,12 +225,11 @@ li {
   list-style: none;
   left: 50%;
   right: 50%;
-  /* display: table; */
 }
 
 .list {
   flex-direction: column;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 .list-item {
@@ -217,7 +247,7 @@ li {
 .form-style-1 {
   margin: 10px auto;
   max-width: 400px;
-  padding: 20px 12px 10px 20px;
+  padding: 36px 12px 0 2px;
   font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .form-style-1 li {
@@ -298,19 +328,22 @@ select {
 .form-style-1 .required {
   color: red;
 }
-.filter {
+.filter,
+.need-title,
+.inventory-title {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 12px 0 0 0;
 }
+
 .filter-text {
   margin: 0 10px;
 }
 @media only screen and (max-width: 600px) {
   .dropbtn,
   .donatebtn {
-    padding: 8px;
+    /* padding: 8px; */
     font-size: 12px;
     border: none;
   }
