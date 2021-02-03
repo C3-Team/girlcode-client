@@ -17,18 +17,27 @@ h1 {
   padding: 0;
   margin: 0;
 }
-
-section {
+h3 {
   text-align: left;
 }
 
 .first {
-  height: 50%;
-  align-content: left;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .second {
-  margin: 40px 0 0 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.third {
+  display: flex;
+  justify-content: center;
+}
+.fourth {
+  padding: 10px 30px;
+  color: black;
 }
 .girlcode-logo {
   padding: 0 20px 0 0;
@@ -212,7 +221,7 @@ section {
 }
 
 footer {
-  padding: 200px 10px;
+  padding: 0px 10px;
   text-align: center;
 }
 
