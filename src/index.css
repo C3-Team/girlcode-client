@@ -4,11 +4,11 @@
   box-sizing: border-box;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   text-decoration: none;
-  background-color: rgb(207, 204, 204);
+  background-color: rgb(233, 172, 148);
   color: black;
 }
 b {
-  color: tomato;
+  color: brown;
   font-size: 14px;
 }
 body {
@@ -63,22 +63,22 @@ h3 {
 
 a:link {
   text-decoration: none;
-  color: tomato;
+  color: brown;
 }
 
 a:visited {
   text-decoration: none;
-  color: tomato;
+  color: brown;
 }
 
 a:hover {
   text-decoration: underline;
-  color: tomato;
+  color: brown;
 }
 
 a:active {
   text-decoration: underline;
-  color: tomato;
+  color: brown;
 }
 section {
   margin: 20px;
@@ -118,7 +118,7 @@ section {
 
 .dropbtn {
   /* background-color: white; */
-  color: tomato;
+  color: brown;
   padding: 15px;
   font-size: 18px;
   border: none;
@@ -376,6 +376,28 @@ select {
     margin: 20px;
     border: 0.25px solid rgb(116, 113, 113);
   }
+}
+.logo-img-container {
+  display: flex;
+  justify-content: center;
+}
+.logo-img {
+  width: 100%;
+  /* height: auto; */
+}
+/* .image {
+  display: flex;
+  justify-content: center;
+} */
+
+.logo-img {
+  /* position: absolute; */
+  width: 100%;
+  height: auto;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select,

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Women from "../../assets/4women.png";
 const MainPage = () => {
   return (
     <>
@@ -38,6 +39,9 @@ const MainPage = () => {
           .
         </p>
       </section>
+      <div className="image">
+        <img className="logo-img" src={Women} alt="four women logo" />
+      </div>
       <br />
       <footer>&copy; 2021 GirlCode</footer>
     </>
