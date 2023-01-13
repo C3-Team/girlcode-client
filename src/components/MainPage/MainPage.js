@@ -43,7 +43,7 @@ const MainPage = () => {
         <img className="logo-img" src={Women} alt="four women logo" />
       </div>
       <br />
-      <footer>&copy; 2021 GirlCode</footer>
+      <footer>&copy; 2023 GirlCode</footer>
     </>
   );
 };
